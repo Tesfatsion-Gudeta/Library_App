@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardviewbook"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="40dp"
+    android:backgroundTint="@android:color/transparent"
+    android:elevation="10dp"
+    android:padding="15dp"
+    app:cardCornerRadius="25dp">
+
+
+    <RelativeLayout
+        android:id="@+id/fulldesc"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/shortdesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/bookimg"
+                android:layout_width="280dp"
+                android:layout_height="300dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:id="@+id/bookName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bookimg"
+                android:layout_marginTop="10dp"
+
+                android:text="BookName"
+                android:textStyle="bold"
+
+                />
+
+            <ImageView
+                android:id="@+id/downarrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bookimg"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="20dp"
+                app:srcCompat="@android:drawable/arrow_down_float"
+                app:tint="@color/black" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/collapsed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/shortdesc"
+            android:padding="12dp"
+            android:visibility="gone"
+            >
+
+            <TextView
+                android:id="@+id/author1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Author: "/>
+            <TextView
+                android:id="@+id/author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="name"
+                android:layout_below="@+id/author1"
+                />
+            <TextView
+                android:id="@+id/desc1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="short description: "
+                android:layout_below="@+id/author"
+                android:layout_marginTop="30dp"
+                />
+            <TextView
+                android:id="@+id/desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="description"
+                android:layout_below="@+id/desc1"/>
+
+            <ImageView
+                android:id="@+id/uparrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                app:srcCompat="@android:drawable/arrow_up_float"
+                android:layout_below="@+id/desc1"
+                app:tint="@color/black"
+                android:layout_margin="5dp"
+
+                />
+
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</com.google.android.material.card.MaterialCardView>
