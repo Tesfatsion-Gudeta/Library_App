@@ -39,10 +39,8 @@ public class Books extends AppCompatActivity {
         recyclerView.setAdapter(recyclerAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        arrayList=new ArrayList<>();
-        booksModel=new BooksModel("Tuesdays with Morrie","mitch","slice of life","this is advices and perspectives from a person in his deathbed","https://imgs.search.brave.com/HAVbITs2epyhTtGiD1Aq0n94bQURNgYVnDI4JjlbjNw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFXS2lRRDJPckwu/anBn",1,200);
-        arrayList.add(booksModel);
-        recyclerAdapter.setBooks(arrayList);
+
+        recyclerAdapter.setBooks(Utils.getSingletonInstance().getAllBooks());
 
 
     }
