@@ -2,9 +2,11 @@ package com.example.libraryapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +15,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.bumptech.glide.Glide;
+
+import java.util.ArrayList;
 
 public class BooksDetailActivity extends AppCompatActivity {
 
@@ -39,10 +43,50 @@ public class BooksDetailActivity extends AppCompatActivity {
                 BooksModel bookDetail=Utils.getSingletonInstance().getBookById(bookId);
                 if(null!=bookDetail){
                     setData(bookDetail);
+                    handleAlreadyRead(bookDetail);
+
                 }
 
             }
         }
+
+
+
+    }
+
+    private void handleAlreadyRead(BooksModel bookDetail) {
+        ArrayList<BooksModel> alreadyRead=Utils.getSingletonInstance().getAlreadyRead();
+        boolean isAlreadyRead=false;
+        for(BooksModel b:alreadyRead) {
+            if (b.getId() == bookDetail.getId()) {
+                isAlreadyRead = true;
+
+            }
+        }
+            if(isAlreadyRead){
+                read.setEnabled(false);
+
+            }
+
+            else{
+                read.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        if(Utils.getSingletonInstance().addToAlreadyRead(bookDetail)){
+                            Toast.makeText(BooksDetailActivity.this, "book added to already read list", Toast.LENGTH_SHORT).show();
+                            Intent intent=new Intent(BooksDetailActivity.this,AlreadyReadBooksActivity.class);
+                            startActivity(intent);
+                        }else{
+                            Toast.makeText(BooksDetailActivity.this, "something went wrong try again!", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
+            }
+
+
+
     }
 
     private void setData(BooksModel bookDetail) {

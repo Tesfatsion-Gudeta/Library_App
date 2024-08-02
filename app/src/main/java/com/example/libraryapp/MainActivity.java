@@ -13,7 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button booksBtn,readingBtn,tobeReadBtn,favBtn,aboutBtn;
+    private Button booksBtn,readingBtn,tobeReadBtn,alreadyRead,favBtn,aboutBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +35,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        alreadyRead.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this,AlreadyReadBooksActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -42,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         booksBtn=findViewById(R.id.button);
         readingBtn=findViewById(R.id.button2);
         tobeReadBtn=findViewById(R.id.button3);
+        alreadyRead=findViewById(R.id.button6);
         favBtn=findViewById(R.id.button4);
         aboutBtn=findViewById(R.id.button5);
 
