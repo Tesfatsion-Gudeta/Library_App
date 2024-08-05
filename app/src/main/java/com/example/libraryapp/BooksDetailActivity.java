@@ -44,17 +44,126 @@ public class BooksDetailActivity extends AppCompatActivity {
                 if(null!=bookDetail){
                     setData(bookDetail);
                     handleAlreadyRead(bookDetail);
+                    handleWishList(bookDetail);
+                    handleFavouriteBooks(bookDetail);
+                    handleCurrentlyReading(bookDetail);
 
                 }
 
             }
         }
 
+    }
+
+    private void handleCurrentlyReading(final BooksModel bookDetail) {
+
+
+        ArrayList<BooksModel> readingList=Utils.getSingletonInstance().getReading();
+        boolean existInReadingList=false;
+        for(BooksModel b:readingList) {
+            if (b.getId() == bookDetail.getId()) {
+                existInReadingList = true;
+
+            }
+        }
+        if(existInReadingList){
+            reading.setEnabled(false);
+
+        }
+
+        else{
+            reading.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    if(Utils.getSingletonInstance().addToReadingList(bookDetail)){
+                        Toast.makeText(BooksDetailActivity.this, "book added to wishlist", Toast.LENGTH_SHORT).show();
+                        Intent intent=new Intent(BooksDetailActivity.this,CurrentlyReadingActivity.class);
+                        startActivity(intent);
+                    }else{
+                        Toast.makeText(BooksDetailActivity.this, "something went wrong try again!", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+
+        }
 
 
     }
 
-    private void handleAlreadyRead(BooksModel bookDetail) {
+    private void handleWishList(final BooksModel bookDetail) {
+
+        ArrayList<BooksModel> wishLists=Utils.getSingletonInstance().getWantToRead();
+        boolean existInWishList=false;
+        for(BooksModel b:wishLists) {
+            if (b.getId() == bookDetail.getId()) {
+                existInWishList = true;
+
+            }
+        }
+        if(existInWishList){
+            wishList.setEnabled(false);
+
+        }
+
+        else{
+            wishList.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    if(Utils.getSingletonInstance().addToWishList(bookDetail)){
+                        Toast.makeText(BooksDetailActivity.this, "book added to wishlist", Toast.LENGTH_SHORT).show();
+                        Intent intent=new Intent(BooksDetailActivity.this,WishListActivity.class);
+                        startActivity(intent);
+                    }else{
+                        Toast.makeText(BooksDetailActivity.this, "something went wrong try again!", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+
+        }
+
+
+
+    }
+
+    private void handleFavouriteBooks(final BooksModel bookDetail) {
+
+
+        ArrayList<BooksModel> favouriteList=Utils.getSingletonInstance().getFavourite();
+        boolean existInFavouriteList=false;
+        for(BooksModel b:favouriteList) {
+            if (b.getId() == bookDetail.getId()) {
+                existInFavouriteList = true;
+
+            }
+        }
+        if(existInFavouriteList){
+            favourite.setEnabled(false);
+
+        }
+
+        else{
+            favourite.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    if(Utils.getSingletonInstance().addToFavouriteList(bookDetail)){
+                        Toast.makeText(BooksDetailActivity.this, "book added to wishlist", Toast.LENGTH_SHORT).show();
+                        Intent intent=new Intent(BooksDetailActivity.this,FavouritesActivity.class);
+                        startActivity(intent);
+                    }else{
+                        Toast.makeText(BooksDetailActivity.this, "something went wrong try again!", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+
+        }
+
+
+    }
+
+    private void handleAlreadyRead(final BooksModel bookDetail) {
         ArrayList<BooksModel> alreadyRead=Utils.getSingletonInstance().getAlreadyRead();
         boolean isAlreadyRead=false;
         for(BooksModel b:alreadyRead) {
