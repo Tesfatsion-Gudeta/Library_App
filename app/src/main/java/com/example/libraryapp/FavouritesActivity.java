@@ -26,7 +26,7 @@ public class FavouritesActivity extends AppCompatActivity {
             return insets;
         });
         recyclerView=findViewById(R.id.recyclerid3);
-        RecyclerAdapter recyclerAdapter=new RecyclerAdapter(this);
+        RecyclerAdapter recyclerAdapter=new RecyclerAdapter(this,"favourite");
         recyclerView.setAdapter(recyclerAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerAdapter.setBooks(Utils.getSingletonInstance().getFavourite());

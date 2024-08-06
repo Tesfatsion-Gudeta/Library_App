@@ -33,7 +33,7 @@ public class Books extends AppCompatActivity {
             return insets;
         });
 
-        recyclerAdapter=new RecyclerAdapter(this);
+        recyclerAdapter=new RecyclerAdapter(this,"books");
         recyclerView=findViewById(R.id.bookslist);
 
         recyclerView.setAdapter(recyclerAdapter);

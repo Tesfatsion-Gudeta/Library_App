@@ -26,7 +26,7 @@ public class CurrentlyReadingActivity extends AppCompatActivity {
             return insets;
         });
         recyclerView=findViewById(R.id.recyclerid4);
-        RecyclerAdapter recyclerAdapter=new RecyclerAdapter(this);
+        RecyclerAdapter recyclerAdapter=new RecyclerAdapter(this,"reading");
         recyclerView.setAdapter(recyclerAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerAdapter.setBooks(Utils.getSingletonInstance().getReading());

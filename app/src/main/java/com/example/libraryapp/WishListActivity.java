@@ -26,7 +26,7 @@ public class WishListActivity extends AppCompatActivity {
             return insets;
         });
         recyclerView=findViewById(R.id.recyclerid2);
-        RecyclerAdapter recyclerAdapter=new RecyclerAdapter(this);
+        RecyclerAdapter recyclerAdapter=new RecyclerAdapter(this,"wishlist");
         recyclerView.setAdapter(recyclerAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerAdapter.setBooks(Utils.getSingletonInstance().getWantToRead());

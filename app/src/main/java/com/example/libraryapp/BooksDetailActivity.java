@@ -77,7 +77,7 @@ public class BooksDetailActivity extends AppCompatActivity {
                 public void onClick(View view) {
 
                     if(Utils.getSingletonInstance().addToReadingList(bookDetail)){
-                        Toast.makeText(BooksDetailActivity.this, "book added to wishlist", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(BooksDetailActivity.this, "book added to reading list", Toast.LENGTH_SHORT).show();
                         Intent intent=new Intent(BooksDetailActivity.this,CurrentlyReadingActivity.class);
                         startActivity(intent);
                     }else{
@@ -149,7 +149,7 @@ public class BooksDetailActivity extends AppCompatActivity {
                 public void onClick(View view) {
 
                     if(Utils.getSingletonInstance().addToFavouriteList(bookDetail)){
-                        Toast.makeText(BooksDetailActivity.this, "book added to wishlist", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(BooksDetailActivity.this, "book added to favourites list", Toast.LENGTH_SHORT).show();
                         Intent intent=new Intent(BooksDetailActivity.this,FavouritesActivity.class);
                         startActivity(intent);
                     }else{

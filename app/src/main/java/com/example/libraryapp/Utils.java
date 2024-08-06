@@ -98,6 +98,19 @@ public class Utils {
     public boolean addToReadingList(BooksModel bookDetail) {
         return reading.add(bookDetail);
     }
+
+    public boolean removeFromAlreadyRead(BooksModel book){
+        return alreadyRead.remove(book);
+    }
+    public boolean removeFromFavourite(BooksModel book){
+        return favourite.remove(book);
+    }
+    public boolean removeFromWishList(BooksModel book){
+        return wantToRead.remove(book);
+    }
+    public boolean removeFromReading(BooksModel book){
+        return reading.remove(book);
+    }
 }
 
 

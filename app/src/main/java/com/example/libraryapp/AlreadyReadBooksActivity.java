@@ -27,7 +27,7 @@ public class AlreadyReadBooksActivity extends AppCompatActivity {
         });
 
         recyclerView=findViewById(R.id.recyclerid);
-        RecyclerAdapter recyclerAdapter=new RecyclerAdapter(this);
+        RecyclerAdapter recyclerAdapter=new RecyclerAdapter(this,"read");
         recyclerView.setAdapter(recyclerAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerAdapter.setBooks(Utils.getSingletonInstance().getAlreadyRead());

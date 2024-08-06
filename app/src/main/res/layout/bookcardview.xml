@@ -48,6 +48,7 @@
                 android:layout_below="@id/bookimg"
                 android:layout_alignParentEnd="true"
                 android:layout_margin="20dp"
+                android:padding="7dp"
                 app:srcCompat="@android:drawable/arrow_down_float"
                 app:tint="@color/black" />
 
@@ -90,15 +91,29 @@
                 android:text="description"
                 android:layout_below="@+id/desc1"/>
 
+            <TextView
+                android:id="@+id/deletebtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="delete"
+                android:layout_toStartOf="@id/uparrow"
+                android:layout_below="@+id/desc"
+                android:layout_margin="8dp"
+                android:textColor="@color/red"
+                android:visibility="gone"
+                />
+
+
             <ImageView
                 android:id="@+id/uparrow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 app:srcCompat="@android:drawable/arrow_up_float"
-                android:layout_below="@+id/desc1"
+                android:layout_below="@+id/desc"
                 app:tint="@color/black"
-                android:layout_margin="5dp"
+                android:layout_margin="8dp"
+                android:padding="7dp"
 
                 />
 

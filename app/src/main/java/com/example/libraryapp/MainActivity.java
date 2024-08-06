@@ -43,6 +43,35 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        readingBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this,CurrentlyReadingActivity.class);
+                startActivity(intent);
+            }
+        });
+        favBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this,FavouritesActivity.class);
+                startActivity(intent);
+            }
+        });
+        tobeReadBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this,WishListActivity.class);
+                startActivity(intent);
+            }
+        });
+        aboutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this,AlreadyReadBooksActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void initalizeViews() {
