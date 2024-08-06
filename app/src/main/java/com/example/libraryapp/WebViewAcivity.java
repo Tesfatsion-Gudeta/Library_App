@@ -26,24 +26,24 @@ public class WebViewAcivity extends AppCompatActivity {
             return insets;
         });
 
-        Intent intent=getIntent();
-        if(intent!=null){
-            String url=intent.getStringExtra("url");
-        webView=findViewById(R.id.webview);
-        webView.loadUrl(url);
-        webView.setWebViewClient(new WebViewClient());
-        webView.getSettings().setJavaScriptEnabled(true);
+        Intent intent = getIntent();
+        if (intent != null) {
+            String url = intent.getStringExtra("url");
+            webView = findViewById(R.id.webview);
+            webView.loadUrl(url);
+            webView.setWebViewClient(new WebViewClient());
+            webView.getSettings().setJavaScriptEnabled(true);
         }
     }
 
     @Override
     public void onBackPressed() {
 
-        if(webView.canGoBack()){
+        if (webView.canGoBack()) {
             webView.goBack();
 
+        } else {
+            super.onBackPressed();
         }
-        else{
-        super.onBackPressed();}
     }
 }

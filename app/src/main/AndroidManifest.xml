@@ -19,15 +19,19 @@
             android:exported="false" />
         <activity
             android:name=".CurrentlyReadingActivity"
+            android:label="@string/activity_currently_reading_books"
             android:exported="false" />
         <activity
             android:name=".FavouritesActivity"
+            android:label="@string/activity_favourite_books"
             android:exported="false" />
         <activity
             android:name=".WishListActivity"
+            android:label="@string/activity_want_to_read_books"
             android:exported="false" />
         <activity
             android:name=".AlreadyReadBooksActivity"
+            android:label="@string/activity_already_read_books"
             android:exported="false" />
         <activity
             android:name=".BooksDetailActivity"
