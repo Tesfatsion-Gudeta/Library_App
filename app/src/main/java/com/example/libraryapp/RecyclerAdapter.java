@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -80,7 +81,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                         builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                Utils.getSingletonInstance().removeFromReading(books.get(holder.getAdapterPosition()));
+                                Utils.getSingletonInstance(context).removeFromReading(books.get(holder.getAdapterPosition()));
+                                Toast.makeText(context, "book successfully deleted", Toast.LENGTH_SHORT).show();
                                 notifyDataSetChanged();
 
                             }
@@ -106,7 +108,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                         builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                Utils.getSingletonInstance().removeFromWishList(books.get(holder.getAdapterPosition()));
+                                Utils.getSingletonInstance(context).removeFromWishList(books.get(holder.getAdapterPosition()));
+                                Toast.makeText(context, "book successfully deleted", Toast.LENGTH_SHORT).show();
                                 notifyDataSetChanged();
 
                             }
@@ -132,7 +135,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                         builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                Utils.getSingletonInstance().removeFromAlreadyRead(books.get(holder.getAdapterPosition()));
+                                Utils.getSingletonInstance(context).removeFromAlreadyRead(books.get(holder.getAdapterPosition()));
+                                Toast.makeText(context, "book successfully deleted", Toast.LENGTH_SHORT).show();
                                 notifyDataSetChanged();
 
                             }
@@ -158,7 +162,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                         builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                Utils.getSingletonInstance().removeFromFavourite(books.get(holder.getAdapterPosition()));
+                                Utils.getSingletonInstance(context).removeFromFavourite(books.get(holder.getAdapterPosition()));
+                                Toast.makeText(context, "book successfully deleted", Toast.LENGTH_SHORT).show();
                                 notifyDataSetChanged();
 
                             }

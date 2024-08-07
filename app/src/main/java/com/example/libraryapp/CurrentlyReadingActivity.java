@@ -33,7 +33,7 @@ public class CurrentlyReadingActivity extends AppCompatActivity {
         RecyclerAdapter recyclerAdapter=new RecyclerAdapter(this,"reading");
         recyclerView.setAdapter(recyclerAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerAdapter.setBooks(Utils.getSingletonInstance().getReading());
+        recyclerAdapter.setBooks(Utils.getSingletonInstance(this).getReading());
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 

@@ -43,7 +43,7 @@ public class BooksDetailActivity extends AppCompatActivity {
         if(null!=intent){
             int bookId=intent.getIntExtra("bookId",-1);
             if(bookId !=-1){
-                BooksModel bookDetail=Utils.getSingletonInstance().getBookById(bookId);
+                BooksModel bookDetail=Utils.getSingletonInstance(this).getBookById(bookId);
                 if(null!=bookDetail){
                     setData(bookDetail);
                     handleAlreadyRead(bookDetail);
@@ -75,7 +75,7 @@ public class BooksDetailActivity extends AppCompatActivity {
     private void handleCurrentlyReading(final BooksModel bookDetail) {
 
 
-        ArrayList<BooksModel> readingList=Utils.getSingletonInstance().getReading();
+        ArrayList<BooksModel> readingList=Utils.getSingletonInstance(this).getReading();
         boolean existInReadingList=false;
         for(BooksModel b:readingList) {
             if (b.getId() == bookDetail.getId()) {
@@ -93,7 +93,7 @@ public class BooksDetailActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
 
-                    if(Utils.getSingletonInstance().addToReadingList(bookDetail)){
+                    if(Utils.getSingletonInstance(BooksDetailActivity.this).addToReadingList(bookDetail)){
                         Toast.makeText(BooksDetailActivity.this, "book added to reading list", Toast.LENGTH_SHORT).show();
                         Intent intent=new Intent(BooksDetailActivity.this,CurrentlyReadingActivity.class);
                         startActivity(intent);
@@ -110,7 +110,7 @@ public class BooksDetailActivity extends AppCompatActivity {
 
     private void handleWishList(final BooksModel bookDetail) {
 
-        ArrayList<BooksModel> wishLists=Utils.getSingletonInstance().getWantToRead();
+        ArrayList<BooksModel> wishLists=Utils.getSingletonInstance(this).getWantToRead();
         boolean existInWishList=false;
         for(BooksModel b:wishLists) {
             if (b.getId() == bookDetail.getId()) {
@@ -128,7 +128,7 @@ public class BooksDetailActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
 
-                    if(Utils.getSingletonInstance().addToWishList(bookDetail)){
+                    if(Utils.getSingletonInstance(BooksDetailActivity.this).addToWishList(bookDetail)){
                         Toast.makeText(BooksDetailActivity.this, "book added to wishlist", Toast.LENGTH_SHORT).show();
                         Intent intent=new Intent(BooksDetailActivity.this,WishListActivity.class);
                         startActivity(intent);
@@ -147,7 +147,7 @@ public class BooksDetailActivity extends AppCompatActivity {
     private void handleFavouriteBooks(final BooksModel bookDetail) {
 
 
-        ArrayList<BooksModel> favouriteList=Utils.getSingletonInstance().getFavourite();
+        ArrayList<BooksModel> favouriteList=Utils.getSingletonInstance(this).getFavourite();
         boolean existInFavouriteList=false;
         for(BooksModel b:favouriteList) {
             if (b.getId() == bookDetail.getId()) {
@@ -165,7 +165,7 @@ public class BooksDetailActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
 
-                    if(Utils.getSingletonInstance().addToFavouriteList(bookDetail)){
+                    if(Utils.getSingletonInstance(BooksDetailActivity.this).addToFavouriteList(bookDetail)){
                         Toast.makeText(BooksDetailActivity.this, "book added to favourites list", Toast.LENGTH_SHORT).show();
                         Intent intent=new Intent(BooksDetailActivity.this,FavouritesActivity.class);
                         startActivity(intent);
@@ -181,7 +181,7 @@ public class BooksDetailActivity extends AppCompatActivity {
     }
 
     private void handleAlreadyRead(final BooksModel bookDetail) {
-        ArrayList<BooksModel> alreadyRead=Utils.getSingletonInstance().getAlreadyRead();
+        ArrayList<BooksModel> alreadyRead=Utils.getSingletonInstance(this).getAlreadyRead();
         boolean isAlreadyRead=false;
         for(BooksModel b:alreadyRead) {
             if (b.getId() == bookDetail.getId()) {
@@ -199,7 +199,7 @@ public class BooksDetailActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
 
-                        if(Utils.getSingletonInstance().addToAlreadyRead(bookDetail)){
+                        if(Utils.getSingletonInstance(BooksDetailActivity.this).addToAlreadyRead(bookDetail)){
                             Toast.makeText(BooksDetailActivity.this, "book added to already read list", Toast.LENGTH_SHORT).show();
                             Intent intent=new Intent(BooksDetailActivity.this,AlreadyReadBooksActivity.class);
                             startActivity(intent);

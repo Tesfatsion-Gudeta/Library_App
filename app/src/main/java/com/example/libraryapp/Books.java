@@ -41,7 +41,7 @@ public class Books extends AppCompatActivity {
 
         recyclerView.setAdapter(recyclerAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerAdapter.setBooks(Utils.getSingletonInstance().getAllBooks());
+        recyclerAdapter.setBooks(Utils.getSingletonInstance(this).getAllBooks());
 
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);

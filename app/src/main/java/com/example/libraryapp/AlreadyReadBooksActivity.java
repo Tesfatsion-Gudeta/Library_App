@@ -34,7 +34,7 @@ public class AlreadyReadBooksActivity extends AppCompatActivity {
         RecyclerAdapter recyclerAdapter=new RecyclerAdapter(this,"read");
         recyclerView.setAdapter(recyclerAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerAdapter.setBooks(Utils.getSingletonInstance().getAlreadyRead());
+        recyclerAdapter.setBooks(Utils.getSingletonInstance(this).getAlreadyRead());
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 

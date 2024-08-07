@@ -33,7 +33,7 @@ public class FavouritesActivity extends AppCompatActivity {
         RecyclerAdapter recyclerAdapter=new RecyclerAdapter(this,"favourite");
         recyclerView.setAdapter(recyclerAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerAdapter.setBooks(Utils.getSingletonInstance().getFavourite());
+        recyclerAdapter.setBooks(Utils.getSingletonInstance(this).getFavourite());
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 

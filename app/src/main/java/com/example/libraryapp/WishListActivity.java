@@ -33,7 +33,7 @@ public class WishListActivity extends AppCompatActivity {
         RecyclerAdapter recyclerAdapter=new RecyclerAdapter(this,"wishlist");
         recyclerView.setAdapter(recyclerAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerAdapter.setBooks(Utils.getSingletonInstance().getWantToRead());
+        recyclerAdapter.setBooks(Utils.getSingletonInstance(this).getWantToRead());
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
