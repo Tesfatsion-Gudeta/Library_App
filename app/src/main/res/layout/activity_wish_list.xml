@@ -30,7 +30,7 @@
             android:id="@+id/drawer"
             android:layout_width="300dp"
             android:layout_height="match_parent"
-            android:background="#51BAB0"
+            android:background="#FFFFFF"
             android:gravity="start"
             android:layout_gravity="start">
 
