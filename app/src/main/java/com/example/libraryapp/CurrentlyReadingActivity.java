@@ -22,13 +22,15 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.appbar.MaterialToolbar;
+
 import java.util.Objects;
 
 public class CurrentlyReadingActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private LinearLayout booksBtn,readingBtn,tobeReadBtn,alreadyRead,favBtn,aboutBtn;
-
+    private MaterialToolbar toolbar;
     DrawerLayout drawerLayout;
 
     ImageView menu;
@@ -50,17 +52,25 @@ public class CurrentlyReadingActivity extends AppCompatActivity {
         alreadyRead=findViewById(R.id.alreadyRead);
         favBtn=findViewById(R.id.fav);
         aboutBtn=findViewById(R.id.about);
-        menu=findViewById(R.id.menuNav);
+//        menu=findViewById(R.id.menuNav);
+        toolbar=findViewById(R.id.toolbar1);
+        setSupportActionBar(toolbar);
 
 
-        menu.setOnClickListener(new View.OnClickListener() {
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
+                // Handle navigation icon click
                 openDrawer(drawerLayout);
             }
         });
 
-
+//        menu.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                openDrawer(drawerLayout);
+//            }
+//        });
 
 
 
@@ -133,7 +143,7 @@ public class CurrentlyReadingActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerAdapter.setBooks(Utils.getSingletonInstance(this).getReading());
 
-//        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
 
     }

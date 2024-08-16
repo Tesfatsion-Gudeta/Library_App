@@ -17,6 +17,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.bumptech.glide.Glide;
+import com.google.android.material.appbar.MaterialToolbar;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -26,6 +27,7 @@ public class BooksDetailActivity extends AppCompatActivity {
     private TextView bookName,authorName,numberOfPages,longDescription;
     private Button reading,wishList,read,favourite;
     private ImageView bookCover;
+    private MaterialToolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,11 @@ public class BooksDetailActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        toolbar=findViewById(R.id.toolbar1);
+        setSupportActionBar(toolbar);
+
+
 
         views();
         Intent intent=getIntent();

@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<BooksModel> arrayList;
     private BooksModel booksModel;
     private LinearLayout booksBtn,readingBtn,tobeReadBtn,alreadyRead,favBtn,aboutBtn;
+    private MaterialToolbar toolbar;
 
     DrawerLayout drawerLayout;
 
@@ -53,21 +54,30 @@ public class MainActivity extends AppCompatActivity {
 
         drawerLayout=findViewById(R.id.main);
         recyclerView=findViewById(R.id.bookslist);
-        menu=findViewById(R.id.menuNav);
+//        menu=findViewById(R.id.menuNav);
         booksBtn=findViewById(R.id.books);
         readingBtn=findViewById(R.id.reading);
         tobeReadBtn=findViewById(R.id.wantToRead);
         alreadyRead=findViewById(R.id.alreadyRead);
         favBtn=findViewById(R.id.fav);
         aboutBtn=findViewById(R.id.about);
-        menu=findViewById(R.id.menuNav);
+        toolbar=findViewById(R.id.toolbar1);
+        setSupportActionBar(toolbar);
 
-        menu.setOnClickListener(new View.OnClickListener() {
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
+                // Handle navigation icon click
                 openDrawer(drawerLayout);
             }
         });
+
+//        menu.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                openDrawer(drawerLayout);
+//            }
+//        });
 
 
 
@@ -157,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static void redirectActivity(Activity activity,Class secondActivity){
         Intent intent=new Intent(activity,secondActivity);
-//        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         activity.startActivity(intent);
         activity.finish();
     }
