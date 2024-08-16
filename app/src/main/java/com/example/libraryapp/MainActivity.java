@@ -20,18 +20,24 @@ import androidx.core.view.GravityCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.appbar.MaterialToolbar;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
+    private RecyclerView recyclerView;
+    private RecyclerAdapter recyclerAdapter;
+    private ArrayList<BooksModel> arrayList;
+    private BooksModel booksModel;
     private LinearLayout booksBtn,readingBtn,tobeReadBtn,alreadyRead,favBtn,aboutBtn;
 
     DrawerLayout drawerLayout;
-    RecyclerView recyclerView;
+
     ImageView menu;
 
     @Override
@@ -129,6 +135,12 @@ public class MainActivity extends AppCompatActivity {
 
                 }
             });
+        recyclerAdapter=new RecyclerAdapter(this,"books");
+        recyclerView=findViewById(R.id.bookslist);
+
+        recyclerView.setAdapter(recyclerAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerAdapter.setBooks(Utils.getSingletonInstance(this).getAllBooks());
 
 
     }
@@ -155,4 +167,18 @@ public class MainActivity extends AppCompatActivity {
         super.onPause();
         closeDrawer(drawerLayout);
     }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:
+                onBackPressed();
+                break;
+            default:
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
 }

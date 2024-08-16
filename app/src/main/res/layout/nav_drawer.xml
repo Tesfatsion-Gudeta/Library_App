@@ -22,7 +22,10 @@
         android:id="@+id/books"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+
+        >
 
         <TextView
 
@@ -40,12 +43,14 @@
         android:id="@+id/reading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+
             android:drawableLeft="@drawable/baseline_book_24"
             android:drawablePadding="8dp"
             android:text="Currently Reading"
@@ -58,12 +63,14 @@
         android:id="@+id/wantToRead"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+
             android:drawableLeft="@drawable/baseline_to_read_24"
             android:drawablePadding="8dp"
             android:text="Want to Read"
@@ -76,13 +83,15 @@
         android:id="@+id/alreadyRead"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        >
 
         <TextView
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+
             android:drawableLeft="@drawable/baseline_read_24"
             android:drawablePadding="8dp"
             android:text="Already Read Books"
@@ -95,13 +104,14 @@
         android:id="@+id/fav"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        >
 
         <TextView
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:drawableLeft="@drawable/baseline_favorite_border_24"
             android:drawablePadding="8dp"
             android:text="Favourites"
@@ -114,13 +124,14 @@
         android:id="@+id/about"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        >
 
         <TextView
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:drawableLeft="@drawable/baseline_person_outline_24"
             android:drawablePadding="8dp"
             android:text="About"
@@ -132,7 +143,8 @@
         android:id="@+id/licesnce"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
+
         android:text=" developed by Tesfatsion Gudeta \n contact:tesfatsiongudeta7@gmail.com"
         android:textStyle="italic" />
 

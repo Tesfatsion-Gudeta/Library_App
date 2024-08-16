@@ -44,7 +44,7 @@ public class Books extends AppCompatActivity {
         recyclerAdapter.setBooks(Utils.getSingletonInstance(this).getAllBooks());
 
 
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+//        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
     }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
