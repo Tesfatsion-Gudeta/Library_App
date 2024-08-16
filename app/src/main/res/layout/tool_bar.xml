@@ -1,0 +1,26 @@
+<com.google.android.material.appbar.MaterialToolbar android:id="@+id/toolbar1"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_margin="10dp"
+    android:padding="5dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:id="@+id/menuNav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_menu_24"
+        />
+
+    <TextView
+        android:id="@+id/appTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:layout_marginStart="35dp"
+        android:layout_gravity="center_vertical"
+        android:textSize="20sp"
+
+        />
+
+</com.google.android.material.appbar.MaterialToolbar>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -9,110 +9,48 @@
 
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraint"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-       >
+        android:orientation="vertical"
+        >
+        <include
+            layout="@layout/tool_bar"/>
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="190dp"
-            android:layout_height="63dp"
-            android:text="Books"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.451"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.027" />
+        <RelativeLayout
+            android:id="@+id/home"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".Books"
+            >
 
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="189dp"
-            android:layout_height="71dp"
-            android:layout_marginTop="28dp"
-            android:text="Currently Reading"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/button"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/button"
-            app:layout_constraintTop_toBottomOf="@+id/button"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="187dp"
-            android:layout_height="66dp"
-            android:text="Want to Read"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/button2"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/button2"
-            app:layout_constraintTop_toBottomOf="@+id/button2"
-            app:layout_constraintVertical_bias="0.053" />
-
-        <Button
-            android:id="@+id/button6"
-            android:layout_width="194dp"
-            android:layout_height="76dp"
-            android:layout_marginTop="28dp"
-            android:text="Already Read Books"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/button3"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/button3"
-            app:layout_constraintTop_toBottomOf="@+id/button3"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="191dp"
-            android:layout_height="69dp"
-            android:layout_marginTop="28dp"
-            android:text="Favourites"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/button6"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/button6"
-            app:layout_constraintTop_toBottomOf="@+id/button6"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="186dp"
-            android:layout_height="65dp"
-            android:layout_marginTop="28dp"
-            android:text="About"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/button4"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/button4"
-            app:layout_constraintTop_toBottomOf="@+id/button4"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/licesnce"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" developed by Tesfatsion Gudeta \n contact:tesfatsiongudeta7@gmail.com"
-            android:textStyle="italic"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.094"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button5"
-            app:layout_constraintVertical_bias="0.628" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/bookslist"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/drawer"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:layout_gravity="start"
+        >
+
+        <include layout="@layout/nav_drawer" />
+
+
+    </RelativeLayout>
 
 
 
 
 
-
-</RelativeLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
 
 

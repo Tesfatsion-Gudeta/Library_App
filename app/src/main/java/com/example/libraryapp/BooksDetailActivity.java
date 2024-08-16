@@ -56,7 +56,7 @@ public class BooksDetailActivity extends AppCompatActivity {
             }
         }
 
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+//        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
 
     }
