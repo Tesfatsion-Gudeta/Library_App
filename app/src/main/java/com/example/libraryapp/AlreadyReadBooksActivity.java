@@ -8,7 +8,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -27,12 +26,27 @@ import com.google.android.material.appbar.MaterialToolbar;
 import java.util.Objects;
 
 public class AlreadyReadBooksActivity extends AppCompatActivity {
-    private RecyclerView recyclerView;
-    private LinearLayout booksBtn,readingBtn,tobeReadBtn,alreadyRead,favBtn,aboutBtn;
-    private MaterialToolbar toolbar;
     DrawerLayout drawerLayout;
+    private RecyclerView recyclerView;
+    private LinearLayout booksBtn, readingBtn, tobeReadBtn, alreadyRead, favBtn, aboutBtn;
+    private MaterialToolbar toolbar;
 
-    ImageView menu;
+    public static void openDrawer(DrawerLayout drawerLayout) {
+        drawerLayout.openDrawer(GravityCompat.START);
+    }
+
+    public static void closeDrawer(DrawerLayout drawerLayout) {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+    }
+
+    public static void redirectActivity(Activity activity, Class secondActivity) {
+        Intent intent = new Intent(activity, secondActivity);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        activity.startActivity(intent);
+        activity.finish();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,16 +59,17 @@ public class AlreadyReadBooksActivity extends AppCompatActivity {
             return insets;
         });
 
-        drawerLayout=findViewById(R.id.main);
-        booksBtn=findViewById(R.id.books);
-        readingBtn=findViewById(R.id.reading);
-        tobeReadBtn=findViewById(R.id.wantToRead);
-        alreadyRead=findViewById(R.id.alreadyRead);
-        favBtn=findViewById(R.id.fav);
-        aboutBtn=findViewById(R.id.about);
+        drawerLayout = findViewById(R.id.main);
+        booksBtn = findViewById(R.id.books);
+        readingBtn = findViewById(R.id.reading);
+        tobeReadBtn = findViewById(R.id.wantToRead);
+        alreadyRead = findViewById(R.id.alreadyRead);
+        favBtn = findViewById(R.id.fav);
+        aboutBtn = findViewById(R.id.about);
 //        menu=findViewById(R.id.menuNav);
-        toolbar=findViewById(R.id.toolbar1);
+        toolbar = findViewById(R.id.toolbar1);
         setSupportActionBar(toolbar);
+        Objects.requireNonNull(getSupportActionBar()).setTitle(R.string.activity_already_read_books);
 
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -65,20 +80,11 @@ public class AlreadyReadBooksActivity extends AppCompatActivity {
             }
         });
 
-//        menu.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                openDrawer(drawerLayout);
-//            }
-//        });
-
-
-
 
         booksBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                redirectActivity(AlreadyReadBooksActivity.this,AlreadyReadBooksActivity.class);
+                redirectActivity(AlreadyReadBooksActivity.this, MainActivity.class);
             }
         });
         alreadyRead.setOnClickListener(new View.OnClickListener() {
@@ -91,36 +97,36 @@ public class AlreadyReadBooksActivity extends AppCompatActivity {
         readingBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                redirectActivity(AlreadyReadBooksActivity.this,AlreadyReadBooksActivity.class);
+                redirectActivity(AlreadyReadBooksActivity.this, CurrentlyReadingActivity.class);
 
             }
         });
         favBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                redirectActivity(AlreadyReadBooksActivity.this,AlreadyReadBooksActivity.class);
+                redirectActivity(AlreadyReadBooksActivity.this, FavouritesActivity.class);
 
             }
         });
         tobeReadBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                redirectActivity(AlreadyReadBooksActivity.this,AlreadyReadBooksActivity.class);
+                redirectActivity(AlreadyReadBooksActivity.this, WishListActivity.class);
 
             }
         });
         aboutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog.Builder builder=new AlertDialog.Builder(AlreadyReadBooksActivity.this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(AlreadyReadBooksActivity.this);
                 builder.setMessage("developed by tesfatsiongudeta7@gmail.com\n" +
                         "visit my website for more applications ");
                 builder.setPositiveButton("Visit", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
-                        Intent intent=new Intent(AlreadyReadBooksActivity.this,WebViewAcivity.class);
-                        intent.putExtra("url","https://google.com");
+                        Intent intent = new Intent(AlreadyReadBooksActivity.this, WebViewAcivity.class);
+                        intent.putExtra("url", "https://google.com");
                         startActivity(intent);
 
 
@@ -138,19 +144,19 @@ public class AlreadyReadBooksActivity extends AppCompatActivity {
             }
         });
 
-        recyclerView=findViewById(R.id.recyclerid);
-        RecyclerAdapter recyclerAdapter=new RecyclerAdapter(this,"read");
+        recyclerView = findViewById(R.id.recyclerid);
+        RecyclerAdapter recyclerAdapter = new RecyclerAdapter(this, "read");
         recyclerView.setAdapter(recyclerAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerAdapter.setBooks(Utils.getSingletonInstance(this).getAlreadyRead());
 
-//        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
 
     }
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case android.R.id.home:
                 onBackPressed();
                 break;
@@ -164,27 +170,10 @@ public class AlreadyReadBooksActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent intent=new Intent(AlreadyReadBooksActivity.this,MainActivity.class);
+        Intent intent = new Intent(AlreadyReadBooksActivity.this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
 
-    }
-
-    public static void openDrawer(DrawerLayout drawerLayout){
-        drawerLayout.openDrawer(GravityCompat.START);
-    }
-
-    public static void closeDrawer(DrawerLayout drawerLayout){
-        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
-            drawerLayout.closeDrawer(GravityCompat.START);
-        }
-    }
-
-    public static void redirectActivity(Activity activity, Class secondActivity){
-        Intent intent=new Intent(activity,secondActivity);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        activity.startActivity(intent);
-        activity.finish();
     }
 
     @Override

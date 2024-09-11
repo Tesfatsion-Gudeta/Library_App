@@ -9,20 +9,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.security.PrivateKey;
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class Books extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private RecyclerAdapter recyclerAdapter;
-    private ArrayList<BooksModel> arrayList;
-    private BooksModel booksModel;
 
 
     @Override
@@ -36,19 +31,20 @@ public class Books extends AppCompatActivity {
             return insets;
         });
 
-        recyclerAdapter=new RecyclerAdapter(this,"books");
-        recyclerView=findViewById(R.id.bookslist);
+        recyclerAdapter = new RecyclerAdapter(this, "books");
+        recyclerView = findViewById(R.id.bookslist);
 
         recyclerView.setAdapter(recyclerAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerAdapter.setBooks(Utils.getSingletonInstance(this).getAllBooks());
 
 
-//        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+
     }
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case android.R.id.home:
                 onBackPressed();
                 break;

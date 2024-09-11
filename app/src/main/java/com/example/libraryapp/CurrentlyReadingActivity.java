@@ -52,9 +52,13 @@ public class CurrentlyReadingActivity extends AppCompatActivity {
         alreadyRead=findViewById(R.id.alreadyRead);
         favBtn=findViewById(R.id.fav);
         aboutBtn=findViewById(R.id.about);
-//        menu=findViewById(R.id.menuNav);
+
         toolbar=findViewById(R.id.toolbar1);
         setSupportActionBar(toolbar);
+
+
+        Objects.requireNonNull(getSupportActionBar()).setTitle(R.string.activity_currently_reading_books);
+
 
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -65,19 +69,12 @@ public class CurrentlyReadingActivity extends AppCompatActivity {
             }
         });
 
-//        menu.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                openDrawer(drawerLayout);
-//            }
-//        });
-
 
 
         booksBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                redirectActivity(CurrentlyReadingActivity.this,AlreadyReadBooksActivity.class);
+                redirectActivity(CurrentlyReadingActivity.this, MainActivity.class);
             }
         });
         alreadyRead.setOnClickListener(new View.OnClickListener() {
@@ -96,14 +93,14 @@ public class CurrentlyReadingActivity extends AppCompatActivity {
         favBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                redirectActivity(CurrentlyReadingActivity.this,AlreadyReadBooksActivity.class);
+                redirectActivity(CurrentlyReadingActivity.this,FavouritesActivity.class);
 
             }
         });
         tobeReadBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                redirectActivity(CurrentlyReadingActivity.this,AlreadyReadBooksActivity.class);
+                redirectActivity(CurrentlyReadingActivity.this,WishListActivity.class);
 
             }
         });

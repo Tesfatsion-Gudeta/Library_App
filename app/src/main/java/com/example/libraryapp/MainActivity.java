@@ -36,10 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private BooksModel booksModel;
     private LinearLayout booksBtn,readingBtn,tobeReadBtn,alreadyRead,favBtn,aboutBtn;
     private MaterialToolbar toolbar;
-
     DrawerLayout drawerLayout;
-
-    ImageView menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,14 +68,6 @@ public class MainActivity extends AppCompatActivity {
                 openDrawer(drawerLayout);
             }
         });
-
-//        menu.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                openDrawer(drawerLayout);
-//            }
-//        });
-
 
 
             booksBtn.setOnClickListener(new View.OnClickListener() {
@@ -169,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent=new Intent(activity,secondActivity);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         activity.startActivity(intent);
-        activity.finish();
+//        activity.finish();
     }
 
     @Override
