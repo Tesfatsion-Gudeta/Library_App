@@ -63,6 +63,8 @@ public class Utils {
         ArrayList<BooksModel> books=new ArrayList<>();
 
         books.add(new BooksModel("Tuesdays with Morrie","mitch","slice of life","this is advices and perspectives from a person in his deathbed","https://imgs.search.brave.com/HAVbITs2epyhTtGiD1Aq0n94bQURNgYVnDI4JjlbjNw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFXS2lRRDJPckwu/anBn",1,200));
+        books.add(new BooksModel("How To Win Friends & Influence People","Dale Carnegie","self-help book","Learn the six ways to make people like you, the twelve ways to win people to your way of thinking, and the nine ways to change people without arousing resentment.","https://imgs.search.brave.com/ZwNWOpWUrmQL95laFpYlODamY3mBDviDMk-ZeMnHAXk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzcxOExPUThlY3lM/LmpwZw",2,288));
+
 
         Gson gson=new Gson();
         SharedPreferences.Editor editor= sharedPreferences.edit();

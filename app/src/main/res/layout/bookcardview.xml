@@ -7,7 +7,7 @@
     android:layout_margin="40dp"
     android:backgroundTint="@android:color/transparent"
     android:elevation="10dp"
-    android:padding="15dp"
+    android:padding="7dp"
     app:cardCornerRadius="25dp">
 
 
@@ -20,7 +20,7 @@
             android:id="@+id/shortdesc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp">
+            android:padding="7dp">
 
             <ImageView
                 android:id="@+id/bookimg"
@@ -60,7 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/shortdesc"
-            android:padding="12dp"
+            android:padding="10dp"
             android:visibility="gone"
             >
 
@@ -82,7 +82,7 @@
                 android:layout_height="wrap_content"
                 android:text="short description: "
                 android:layout_below="@+id/author"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="25dp"
                 />
             <TextView
                 android:id="@+id/desc"
@@ -100,7 +100,7 @@
                 android:layout_below="@+id/desc"
                 android:layout_margin="8dp"
                 android:textColor="@color/red"
-                android:visibility="gone"
+
                 />
 
 
