@@ -16,7 +16,7 @@
 
 Here’s a quick preview of the app in action:
 
-![App Preview](./preview/preview.gif)
+![App Preview](./AppPreview/preview.gif)
 
 ## Technologies Used
 
