@@ -10,7 +10,6 @@
 - **Favorites Page**: Mark and easily access your favorite books.
 - **Currently Reading Page**: Monitor the books you are currently reading.
 - **Book Details**: View detailed information about each book, including the author, description, and number of pages.
-- **SharedPreferences**: Utilized for storing user data and preferences, ensuring that your reading list and book details are preserved across app sessions.
 
 
 
