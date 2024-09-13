@@ -12,16 +12,11 @@
 - **Book Details**: View detailed information about each book, including the author, description, and number of pages.
 - **SharedPreferences**: Utilized for storing user data and preferences, ensuring that your reading list and book details are preserved across app sessions.
 
-## Screenshots
+## App Preview
 
-Here are some screenshots of the app in action:
+Here’s a quick preview of the app in action:
 
-![Books Page](./images/books_page.png)
-![Already Read Books](./images/already_read_books.png)
-![Want to Read Books](./images/want_to_read_books.png)
-![Favorites Page](./images/favorites_page.png)
-![Currently Reading Page](./images/currently_reading_page.png)
-![Book Details](./images/book_details.png)
+![App Preview](./preview/preview.gif)
 
 ## Technologies Used
 
