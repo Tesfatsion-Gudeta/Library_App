@@ -38,5 +38,11 @@ Here’s a quick preview of the app in action:
 
 3.Build and run the project on an Android device or emulator.
 
+Usage 
+
+**Add books to different categories based on your reading preferences.
+**Update each book's status (already read, want to read, favorites, etc.) as you progress.
+**View detailed information for each book in your collection.
+
   
 
