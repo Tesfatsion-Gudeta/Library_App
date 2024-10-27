@@ -35,6 +35,7 @@ Here’s a quick preview of the app in action:
    `https://github.com/Tesfatsion-Gudeta/Library_App.git`
    
 2. Open the project in Android Studio.
+
 3.Build and run the project on an Android device or emulator.
 
   
