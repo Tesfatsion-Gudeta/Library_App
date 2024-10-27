@@ -29,6 +29,12 @@ Here’s a quick preview of the app in action:
 - **SharedPreferences**: Used to store user data and preferences, allowing for persistence of the reading list and other settings.
 - **Glide library**:for loading images to the app.
 
-https://github.com/Tesfatsion-Gudeta/Library_App.git
+
+### Installation
+1. Clone the repository:  
+   `https://github.com/Tesfatsion-Gudeta/Library_App.git`  
+2. Navigate to the project directory:  
+   `cd Library_App`
+
   
 
