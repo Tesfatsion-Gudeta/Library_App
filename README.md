@@ -28,5 +28,7 @@ Here’s a quick preview of the app in action:
 - **Java Programming Language**: The app is developed using Java, a popular programming language for Android development.
 - **SharedPreferences**: Used to store user data and preferences, allowing for persistence of the reading list and other settings.
 - **Glide library**:for loading images to the app.
+
+https://github.com/Tesfatsion-Gudeta/Library_App.git
   
 
